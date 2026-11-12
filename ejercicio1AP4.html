@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var formulario = document.getElementById('miFormulario');
+            var mensaje = document.getElementById('mensaje');
+
+            formulario.addEventListener('submit', function(event) {
+                var campo1 = document.getElementById('dni').value;
+                var campo2 = document.getElementById('nombre').value;
+                var campo3 = document.getElementById('apellido').value;
+
+                if (campo1 === '' || campo2 === '' || campo3 === '') {
+                    event.preventDefault();
+                    mensaje.innerHTML = 'Por favor, complete todos los campos.';
+                } else {
+                    alert('Formulario enviado correctamente.');
+                }
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Formulario de Registro</h2>
+        <form id="miFormulario" action="#" method="get">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni"><br><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido"><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <p id="mensaje"></p>
+</body>
+</html>

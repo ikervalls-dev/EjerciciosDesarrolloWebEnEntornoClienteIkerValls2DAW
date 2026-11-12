@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var miDiv = document.getElementById("textoInteractivo");
+            miDiv.onmouseover = cambiarTamañoConEvento;
+            miDiv.onmouseout = cambiarTamañoConEvento;
+        });
+        function cambiarTamañoConEvento(evento) {
+            switch(evento.type) {
+                case 'mouseover':
+                    this.style.fontSize = '16pt';
+                    break;
+                case 'mouseout':
+                    this.style.fontSize = '12pt';
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="textoInteractivo" style="font-size: 12pt;">
+        Al pasar por encima de este texto cambiará de tamaño
+    </div>
+</body>
+</html>

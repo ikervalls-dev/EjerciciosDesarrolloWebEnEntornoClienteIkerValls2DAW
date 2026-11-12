@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        function cambiarTamaño(elemento, tamaño) {
+            elemento.style.fontSize = tamaño;
+        }
+    </script>
+</head>
+<body>
+    <div style="font-size: 12pt;"
+    onmouseover="cambiarTamaño(this, '16pt')"
+    onmouseout="cambiarTamaño(this, '12pt')">
+    Al pasar por encima de este texto cambiará de tamaño
+    </div>
+</body>
+</html>

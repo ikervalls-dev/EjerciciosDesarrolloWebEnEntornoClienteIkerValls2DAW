@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var botones = document.getElementsByTagName("button");
+            var resultado = document.getElementById("resultado");
+            
+            for (var i = 0; i < botones.length; i++) {
+                botones[i].addEventListener("click", function() {
+                    resultado.innerHTML += "Has pulsado sobre un botón<br>";
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>Detección de botones</h1>
+<div id="botones">
+<button>Botón 1</button>
+<button>Botón 2</button>
+<button>Botón 3</button>
+</div>
+<p id="resultado"></p>
+</body>
+</html>

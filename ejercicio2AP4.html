@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var enlace = document.getElementById('miEnlace');
+
+            enlace.addEventListener('click', function (event) {
+                event.preventDefault();
+                alert("Enlace bloqueado");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv">
+        <a href="https://www.w3schools.com/" id="miEnlace">W3Schools</a>
+    </div>
+</body>
+</html>

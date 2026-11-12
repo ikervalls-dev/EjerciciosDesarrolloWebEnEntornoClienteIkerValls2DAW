@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var miDiv = document.getElementById("textoInteractivo");
+            miDiv.onmouseover = agrandar;
+            miDiv.onmouseout = reducir;
+        });
+        function agrandar() {
+            this.style.fontSize = '16pt';
+        }
+        function reducir() {
+            this.style.fontSize = '12pt';
+        }
+    </script>
+</head>
+<body>
+    <div id="textoInteractivo" style="font-size: 12pt;">
+        Al pasar por encima de este texto cambiará de tamaño
+    </div>
+</body>
+</html>

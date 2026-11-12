@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script>
+        var enlaces;
+        var parrafos;
+        var divResultado;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            enlaces = document.getElementsByTagName('a');
+            parrafos = document.getElementsByTagName('p');
+            divResultado = document.getElementById('resultado');
+        });
+        function mostrarNumeroEnlaces() {
+            divResultado.innerHTML = '<p>Número total de enlaces: ' + enlaces.length + '</p>';
+        }
+        function mostrarReferenciasEnlaces() {
+            var texto = '<p>Referencias de todos los enlaces:</p>';
+            for (var i = 0; i < enlaces.length; i++) {
+                texto += enlaces[i].href + '<br>';
+            }
+            divResultado.innerHTML = texto;
+        }
+        function mostrarReferenciasPorParrafo() {
+            var texto = '<p>Referencias de enlaces por párrafo:</p>';
+            for (var i = 0; i < parrafos.length; i++) {
+                var enlacesParrafo = parrafos[i].getElementsByTagName('a');
+                if (enlacesParrafo.length > 0) {
+                    texto += 'Párrafo ' + (i + 1) + ':<br>';
+                    for (var j = 0; j < enlacesParrafo.length; j++) {
+                        texto += enlacesParrafo[j].href + '<br>';
+                    }
+                }
+                texto += '<br>';
+            }
+            divResultado.innerHTML = texto;
+        }
+        function parrafosVerdes() {
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = 'green';
+            }
+        }
+        function desactivarColor() {
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Primer párrafo: <a href="https://www.google.com">Google</a></p>
+    <p>Segundo párrafo: 
+        <a href="https://www.wikipedia.org">Wikipedia</a> y 
+        <a href="https://github.com">GitHub</a>
+    </p>
+    <p>Tercer párrafo: 
+        <a href="https://www.w3schools.com/">W3Schools</a>, 
+        <a href="https://www.canva.com/">Canva</a> y 
+        <a href="https://www.youtube.com/">YouTube</a>
+    </p>
+    <br>
+    <button onclick="mostrarNumeroEnlaces()">Número de enlaces</button>
+    <button onclick="mostrarReferenciasEnlaces()">Referencia enlaces</button>
+    <button onclick="mostrarReferenciasPorParrafo()">Referencia enlaces por párrafo</button>
+    <button onclick="parrafosVerdes()">Párrafos verdes</button>
+    <button onclick="desactivarColor()">Desactivar color</button>
+    <br><br>
+    <div id="resultado">
+        <p>Los resultados aparecerán aquí</p>
+    </div>
+</body>
+</html>

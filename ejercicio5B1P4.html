@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var numero = document.getElementById("numero");
+            
+            numero.addEventListener("keypress", function(event) {
+                var codigo = event.keyCode;
+                if (codigo < 48 || codigo > 57) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label for="numero">Introduce un número:</label>
+        <input type="text" id="numero">
+    </form>
+</body>
+</html>

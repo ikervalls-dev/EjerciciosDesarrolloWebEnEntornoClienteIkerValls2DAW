@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var miDiv = document.getElementById('miDiv');
+            var miBoton = document.getElementById('miBoton');
+
+            miDiv.addEventListener('click', function(event) {
+                alert("Se ha clicado en el div");
+            });
+            miBoton.addEventListener('click', function(event) {
+                event.stopPropagation();
+                alert("Se ha clicado en el botón");
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv" style="background-color: lightblue; padding: 10px; text-align: center;">
+        <p>Haz clic fuera en el fondo azul para ver el evento del div.</p>
+        <button id="miBoton">Haz clic en el Botón</button>
+    </div>
+</body>
+</html>
