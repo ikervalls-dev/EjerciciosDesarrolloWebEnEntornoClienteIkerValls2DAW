@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var parrafo = document.getElementById("miParrafo");
+            var negrita = document.getElementById("negrita");
+            var cursiva = document.getElementById("cursiva");
+
+            negrita.addEventListener('change', function () {
+                if (this.checked) {
+                    parrafo.style.fontWeight = "bold";
+                }
+                else {
+                    parrafo.style.fontWeight = "normal";
+                }
+            });
+            cursiva.addEventListener('change', function () {
+                if (this.checked) {
+                    parrafo.style.fontStyle = "italic";
+                }
+                else {
+                    parrafo.style.fontStyle = "normal";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<label>Elige estilos:</label><br>
+
+    <input type="checkbox" id="negrita">
+    <label for="negrita">Negrita</label><br>
+
+    <input type="checkbox" id="cursiva">
+    <label for="cursiva">Cursiva</label>
+
+    <p id="miParrafo">Párrafo de prueba para los estilos</p>
+</body>
+</html>

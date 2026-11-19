@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        function cambiarColor(colorElegido) {
+            var parrafo = document.getElementById("miParrafo");
+            parrafo.style.color = colorElegido;
+        }
+    </script>
+</head>
+<body>
+    <label>Elige un color:</label><br>
+    
+    <input type="radio" id="verde" name="color" value="green" onclick="cambiarColor('green')">
+    <label for="verde">Verde</label><br>
+
+    <input type="radio" id="azul" name="color" value="blue" onclick="cambiarColor('blue')">
+    <label for="azul">Azul</label><br>
+
+    <input type="radio" id="rojo" name="color" value="red" onclick="cambiarColor('red')">
+    <label for="rojo">Rojo</label>
+
+    <p id="miParrafo">Este párrafo cambiará de color con la opción seleccionada de los botones de radio</p>
+</body>
+</html>

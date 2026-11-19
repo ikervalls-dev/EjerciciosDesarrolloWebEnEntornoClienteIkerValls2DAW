@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectorColor = document.getElementById("selectorColor");
+            var parrafo = document.getElementById("miParrafo");
+
+            selectorColor.addEventListener('change', function () {
+                parrafo.style.color = selectorColor.value;
+            });
+        });
+    </script>
+</head>
+<body>
+    <label for="selectorColor">Elige un color:</label>
+    <select id="selectorColor" name="selectorColor">
+        <option value="green">verde</option>
+        <option value="blue">azul</option>
+        <option value="red">rojo</option>
+    </select><br>
+    <p id="miParrafo">Este párrafo cambiará de color con la opción seleccionada del cuadro de lista</p>
+</body>
+</html>

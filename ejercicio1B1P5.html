@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var formulario = document.getElementById("miFormulario");
+            document.getElementById("nombre").focus();
+
+            var foto = document.getElementById("foto");
+            foto.accept = "image/*";
+
+            var aficiones = document.getElementById("aficiones");
+            aficiones.addEventListener("change", function () {
+                var longitud = aficiones.length;
+                var indice = aficiones.selectedIndex;
+                var valor = aficiones.value;
+                alert("La longitud de la lista es " + longitud + "\n" +
+                    "El índice seleccionado es el " + indice + "\n" +
+                    "El valor del índice seleccionado es " + valor);
+            });
+            var observaciones = document.getElementById("observaciones");
+            observaciones.maxLength = 150;
+
+            var botonEnviar = document.getElementById("botonEnviar");
+            botonEnviar.addEventListener("click", function () {
+                var dni = document.getElementById("dni").value;
+                if (dni === "") {
+                    alert("El campo DNI es obligatorio");
+                    document.getElementById("dni").focus();
+                }
+                else {
+                    var telefono = document.getElementById("telefono").value;
+                    if (!/^\d{9}$/.test(telefono)) {
+                        alert("El telefono debe tener 9 digitos consecutivos y sin espacios ni guiones entre las cifras");
+                        document.getElementById("telefono").focus();
+                    }
+                    else {
+                        formulario.submit();
+                    }
+                }
+            });
+            var botonBorrar = document.getElementById("botonBorrar");
+            botonBorrar.addEventListener("click", function () {
+                formulario.reset();
+                document.getElementById("nombre").focus();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>FORMULARIO</h2>
+    <form id="miFormulario" action="#" method="get">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos"><br>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono"><br>
+
+        <label for="dni">Dni:</label>
+        <input type="text" id="dni" name="dni"><br>
+
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad"><br>
+
+        <label>Sexo:</label><br>
+        <input type="radio" id="hombre" name="sexo" value="hombre" checked>
+        <label for="hombre">Hombre</label><br>
+        <input type="radio" id="mujer" name="sexo" value="mujer">
+        <label for="mujer">Mujer</label><br>
+
+        <label for="foto">Incluir mi foto:</label>
+        <input type="file" id="foto" name="foto"><br>
+
+        <input type="checkbox" id="publicidad" name="publicidad" value="si" checked>
+        <label for="publicidad">Enviar publicidad</label><br>
+
+        <label for="aficiones">Elige tu afición favorita:</label>
+        <select id="aficiones" name="aficiones">
+            <option value="musica">musica</option>
+            <option value="lectura">lectura</option>
+            <option value="deporte">deporte</option>
+        </select><br><br>
+
+        <label for="observaciones">Observaciones:</label><br>
+        <textarea id="observaciones" name="observaciones" rows="4" cols="30"></textarea><br>
+
+        <button type="button" id="botonEnviar">Guardar cambios</button>
+        <button type="reset" id="botonBorrar">Borrar los datos introducidos</button>
+    </form>
+</body>
+</html>
